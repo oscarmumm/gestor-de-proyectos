@@ -1,0 +1,52 @@
+.project-creation-options__screen {
+    z-index: 3;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.project-creation-options {
+    background: var(--dark-02);
+    border-radius: 10px;
+}
+
+.project-creation-options__close-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.project-creation-options__form {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.project-creation-options__close-btn {
+    width: 37px;
+    background: none;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.project-creation-options__name-input {
+    margin: 2rem 0;
+    padding: 0.5rem;
+}
+.project-creation-options__phases-title {
+    margin: 1rem 0;
+}
+.project-creation-options__phase-input {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+.project-creation-options__create-btn {
+    margin: 2rem 0;
+}

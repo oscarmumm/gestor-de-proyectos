@@ -1,0 +1,36 @@
+:root {
+    /* COLOR PALLETE */
+    --dark-01: #12101E;
+    --dark-02: #202634;
+    --accent: #15D3B9;
+    --purple: #4F60EB;
+    --orange: #FF9574;
+    --red: #FE3B77;
+    --green: #3EDE9C;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: .5rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+input {
+    border-radius: 5px;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
