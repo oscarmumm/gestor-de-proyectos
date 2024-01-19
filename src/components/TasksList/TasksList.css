@@ -11,6 +11,7 @@
     padding: 1rem;
     background: var(--dark-02);
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .task-list__card-title {

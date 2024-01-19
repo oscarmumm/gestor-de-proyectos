@@ -1,9 +1,10 @@
 import NewProjectBtn from "../NewProjectBtn/NewProjectBtn";
+import './MainHeader.css'
 
 const MainHeader = ({openCreationOptionsMenu}) => {
     return (
-        <header>
-            <h1>Gestor de Proyectos</h1>
+        <header className="main-header">
+            <h1 className="main-header__title">Gestor de Proyectos</h1>
             <NewProjectBtn openCreationOptionsMenu={openCreationOptionsMenu} />
         </header>
     );

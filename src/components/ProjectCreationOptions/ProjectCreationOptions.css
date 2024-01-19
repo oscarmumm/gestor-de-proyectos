@@ -19,7 +19,11 @@
 .project-creation-options__close-btn-container {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+.project-creation-options__close-btn-container__title {
+    padding: 1rem;
 }
 
 .project-creation-options__form {

@@ -1,0 +1,11 @@
+.main-header {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main-header__title {
+    max-width: 160px;
+}

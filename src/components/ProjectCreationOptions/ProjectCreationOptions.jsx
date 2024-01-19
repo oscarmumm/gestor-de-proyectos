@@ -37,6 +37,7 @@ const ProjectCreationOptions = ({closeCreationOptionsMenu}) => {
         <div className="project-creation-options__screen">
             <div className="project-creation-options">
                 <div className="project-creation-options__close-btn-container">
+                    <h3 className="project-creation-options__close-btn-container__title">Nuevo proyecto</h3>
                     <button
                         onClick={handleCloseBtnClick}
                         className="btn project-creation-options__close-btn">

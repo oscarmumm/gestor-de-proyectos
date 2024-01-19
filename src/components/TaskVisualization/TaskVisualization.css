@@ -1,0 +1,54 @@
+.task-visualization-modal {
+    z-index: 3;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.task-visualization {
+    background: var(--dark-02);
+    border-radius: 5px;
+    min-width: 500px;
+    max-width: 600px;
+    position: relative;
+}
+
+.task-visualization__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-visualization__close-btn,
+.task-visualization__options-btn {
+    border: none;
+    width: 37px;
+    background: none;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.task-visualization__options-btn__img {
+    width: 20px;
+}
+
+.task-visualization__content {
+    padding: 1rem;
+}
+
+.task-visualization__title {
+    font-size: 1.2rem;
+}
+
+.task-visualization__details {
+    margin: 1rem 0;
+}
+
+.task-visualization__expdate {
+    text-align: end;
+}
