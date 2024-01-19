@@ -9,7 +9,9 @@ const newProjectDataFormat = {
     phase1: "",
     phase1Tasks: [],
     phase2: "",
+    phase2Tasks: [],
     phase3: "",
+    phase3Tasks: [],
 };
 
 const ProjectCreationOptions = ({closeCreationOptionsMenu}) => {

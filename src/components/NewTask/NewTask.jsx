@@ -8,6 +8,7 @@ const newTaskFormat = {
     taskDetails: "",
     taskExpDate: "",
     taskCreationDate: "",
+    taskPhase: 'phase1',
 };
 
 const NewTask = ({closeNewTaskMenu}) => {

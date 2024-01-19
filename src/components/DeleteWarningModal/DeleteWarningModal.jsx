@@ -19,7 +19,7 @@ const DeleteWarningModal = ({closeWarningModal, taskVisualizationData}) => {
         <div className="delete-warning-modal">
             <div className="delete-warning">
                 <p className="delete-warning__title">
-                    Está seguro que desea eliminar la tarea?
+                    ¿Está seguro que desea eliminar la tarea?
                 </p>
                 <div className="delete-warning__btn-container">
                     <button

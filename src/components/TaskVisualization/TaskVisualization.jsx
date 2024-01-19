@@ -39,7 +39,8 @@ const TaskVisualization = ({taskVisualizationData, setTaskVisualizationActive}) 
                     </p>
                     <p className="task-visualization__expdate">
                         Fecha límite: <br/>
-                        {taskVisualizationData.taskExpDate}
+                        {/* esta línea de código muestra la fecha con el formato DD-MM-YYYY en lugar del YYYY-MM-DD predeterminado  */}
+                        {taskVisualizationData.taskExpDate.slice(8, 10)}-{taskVisualizationData.taskExpDate.slice(5, 7)}-{taskVisualizationData.taskExpDate.slice(0,4)}
                     </p>
                 </div>
             </div>
