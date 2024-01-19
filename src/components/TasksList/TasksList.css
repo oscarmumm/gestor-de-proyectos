@@ -1,0 +1,26 @@
+.task-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-list__card {
+    margin-top: 1rem;
+    width: 100%;
+    list-style: none;
+    padding: 1rem;
+    background: var(--dark-02);
+    border-radius: 5px;
+}
+
+.task-list__card-title {
+    font-size: 1.2rem;
+}
+
+.task-list__card-details {
+    margin: .5rem 0;
+}
+
+.task-list__card-expdate {
+    text-align: end;
+}

@@ -1,0 +1,59 @@
+.new-task-modal {
+    z-index: 3;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.new-task {
+
+    background: var(--dark-02);
+    border-radius: 5px;
+}
+
+.new-task-form {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.new-task__title,
+.new-task__details,
+.new-task__expiration {
+    margin: .5rem 0;
+    padding: .5rem;
+}
+
+.new-task__details {
+    border-radius: 5px;
+    resize: none;
+    height: 10rem;
+}
+
+.new-task__details:focus {
+    outline: none;
+}
+
+.new-task__add-task-btn {
+    margin: 1rem 0;
+}
+
+.new-task__close-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.new-task__close-btn {
+    width: 37px;
+    background: none;
+    color: var(--white);
+    font-weight: bold;
+}

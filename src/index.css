@@ -1,12 +1,12 @@
 :root {
     /* COLOR PALLETE */
-    --dark-01: #12101E;
+    --dark-01: #12101e;
     --dark-02: #202634;
-    --accent: #15D3B9;
-    --purple: #4F60EB;
-    --orange: #FF9574;
-    --red: #FE3B77;
-    --green: #3EDE9C;
+    --accent: #15d3b9;
+    --purple: #4f60eb;
+    --orange: #ff9574;
+    --red: #fe3b77;
+    --green: #3ede9c;
     --white: #ffffff;
 }
 
@@ -14,12 +14,69 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Ubuntu";
+}
+
+@font-face {
+    src: url('./fonts/Ubuntu-Light.ttf');
+    font-family: "Ubuntu";
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    src: url('./fonts/Ubuntu-LightItalic.ttf');
+    font-family: "Ubuntu";
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    src: url('./fonts/Ubuntu-Regular.ttf');
+    font-family: "Ubuntu";
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    src: url('./fonts/Ubuntu-Regular.ttf');
+    font-family: "Ubuntu";
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    src: url('./fonts/Ubuntu-Medium.ttf');
+    font-family: "Ubuntu";
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    src: url('./fonts/Ubuntu-Medium.ttf');
+    font-family: "Ubuntu";
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    src: url('./fonts/Ubuntu-Bold.ttf');
+    font-family: "Ubuntu";
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    src: url('./fonts/Ubuntu-BoldItalic.ttf');
+    font-family: "Ubuntu";
+    font-weight: 700;
+    font-style: italic;
 }
 
 .btn {
     border: none;
     border-radius: 5px;
-    padding: .5rem;
+    padding: 0.5rem;
 }
 
 .btn:hover {

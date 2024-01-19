@@ -1,0 +1,29 @@
+.project {
+    width: 100vw;
+    height: 100vh;
+}
+
+.project-header {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background: var(--dark-02);
+}
+
+.project-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.project-board-column {
+    padding: .5rem;
+}
+
+.project-board-column__title {
+    text-align: center;
+    padding: .5rem;
+}
+
+.project-board-column__new-task-btn {
+    width: 100%;
+}
