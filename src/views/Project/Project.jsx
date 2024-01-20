@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
-import { DataContext } from "../../contexts/DataContext";
+import {useContext, useEffect, useState} from "react";
+import {DataContext} from "../../contexts/DataContext";
 import "./Project.css";
 import NewTask from "../../components/NewTask/NewTask";
 import TasksList from "../../components/TasksList/TasksList";
 
 const Project = () => {
-    const { data, setData } = useContext(DataContext);
+    const {data, setData} = useContext(DataContext);
     const [newTaskActive, setNewTaskActive] = useState(false);
     const newTaskClick = () => {
         setNewTaskActive(true);
@@ -13,10 +13,20 @@ const Project = () => {
     const closeNewTaskMenu = () => {
         setNewTaskActive(false);
     };
+
+    const checkData = () => {
+        console.log(data)
+    }
+
+    useEffect(() => {
+        console.log('data updated en project')
+    }, [{data}])
+
     return (
         <div className="project">
             <div className="project-header">
-                Proyecto: {data.currentProject.projectName}
+                <h2>Proyecto: {data.currentProject.projectName}</h2>
+                <button onClick={checkData} className="btn check-data-btn">Check data</button>
             </div>
             <div className="project-board">
                 <div className="project-board-column">
@@ -26,11 +36,10 @@ const Project = () => {
                     <div className="project-board-column__content">
                         <button
                             onClick={newTaskClick}
-                            className="btn project-board-column__new-task-btn"
-                        >
+                            className="btn project-board-column__new-task-btn">
                             Crear tarea
                         </button>
-                        <TasksList phaseName={'phase1Tasks'} />
+                        <TasksList phaseName={"phase1Tasks"} />
                     </div>
                 </div>
                 <div className="project-board-column">
@@ -38,7 +47,7 @@ const Project = () => {
                         {data.currentProject.phase2}
                     </h4>
                     <div className="project-board-column__content">
-                        <TasksList phaseName={'phase2Tasks'} />
+                        <TasksList phaseName={"phase2Tasks"} />
                     </div>
                 </div>
                 <div className="project-board-column">
@@ -46,7 +55,7 @@ const Project = () => {
                         {data.currentProject.phase3}
                     </h4>
                     <div className="project-board-column__content">
-                        <TasksList phaseName={'phase3Tasks'} />
+                        <TasksList phaseName={"phase3Tasks"} />
                     </div>
                 </div>
             </div>

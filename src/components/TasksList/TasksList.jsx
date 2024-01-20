@@ -10,7 +10,6 @@ const TasksList = ({phaseName}) => {
     const {data, setData} = useContext(DataContext);
     const activeTaskVisualization = (el) => {
         setTaskVisualizationActive(true);
-        console.log(el);
         setTaskVisualizationData({
             taskTitle: el.taskTitle,
             taskDetails: el.taskDetails,
@@ -20,12 +19,13 @@ const TasksList = ({phaseName}) => {
         });
     };
     const closeTaskVisualization = () => {
-        setTaskVisualizationActive(false)
-    }
+        setTaskVisualizationActive(false);
+    };
+
     useEffect(() => {
-        console.log('se actualizó data')
+        console.log('data updated en list')
     }, [{data}])
-    
+
     return (
         <ul className="task-list">
             {data.currentProject[phaseName]?.map((el) => (
@@ -36,9 +36,12 @@ const TasksList = ({phaseName}) => {
                     <h4 className="task-list__card-title">{el.taskTitle}</h4>
                     <p className="task-list__card-details">{el.taskDetails}</p>
                     <p className="task-list__card-expdate">
-                        Fecha límite:<br/>
+                        Fecha límite:
+                        <br />
                         {/* esta línea de código muestra la fecha con el formato DD-MM-YYYY en lugar del YYYY-MM-DD predeterminado  */}
-                        {el.taskExpDate.slice(8, 10)}-{el.taskExpDate.slice(5, 7)}-{el.taskExpDate.slice(0, 4)}
+                        {el.taskExpDate.slice(8, 10)}-
+                        {el.taskExpDate.slice(5, 7)}-
+                        {el.taskExpDate.slice(0, 4)}
                     </p>
                 </li>
             ))}

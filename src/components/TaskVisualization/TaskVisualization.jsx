@@ -11,13 +11,12 @@ const TaskVisualization = ({
 }) => {
     const [taskMenuActive, setTaskMenuActive] = useState(false);
     const { data, setData } = useContext(DataContext);
-    //esta funcion también pasa a loc componentes hijos para que al eliminar la tarea se cierren las ventanas modales y vuelva a la vista de proyecto
+    //esta funcion también pasa a los componentes hijos para que al eliminar la tarea se cierren las ventanas modales y vuelva a la vista de proyecto
     const handleCloseBtnClick = () => {
         setTaskVisualizationActive(false);
     };
     const openMenu = () => {
         taskMenuActive ? setTaskMenuActive(false) : setTaskMenuActive(true);
-        console.log(data);
     };
     return (
         <div className="task-visualization-modal">

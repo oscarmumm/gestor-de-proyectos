@@ -31,7 +31,6 @@ const NewTask = ({closeNewTaskMenu}) => {
         data.currentProject.phase1Tasks.push(temp);
         setNewTaskData(newTaskFormat);
         closeNewTaskMenu();
-        console.log(data.currentProject)
     };
     return (
         <div className="new-task-modal">

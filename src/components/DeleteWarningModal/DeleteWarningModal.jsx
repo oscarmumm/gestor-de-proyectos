@@ -1,21 +1,28 @@
 import "./DeleteWarningModal.css";
-import { useContext } from "react";
-import { DataContext } from "../../contexts/DataContext";
+import {useContext} from "react";
+import {DataContext} from "../../contexts/DataContext";
 
-const DeleteWarningModal = ({closeWarningModal, taskVisualizationData, handleCloseBtnClick}) => {
-    const {data, setData} = useContext(DataContext)
+const DeleteWarningModal = ({
+    closeWarningModal,
+    taskVisualizationData,
+    handleCloseBtnClick,
+}) => {
+    const {data, setData} = useContext(DataContext);
     const clickOnGoBack = () => {
         closeWarningModal();
     };
     const clickOnDeleteTask = () => {
         //determinamos la phase donde se encuentra la tarea
-        let currentPhase = `${taskVisualizationData.taskPhase}Tasks`
+        let currentPhase = `${taskVisualizationData.taskPhase}Tasks`;
         //borramos la tarea de su phase
-        let filteredPhase = data.currentProject[currentPhase].filter((el) => el.taskCreationDate !== taskVisualizationData.taskCreationDate)
-        data.currentProject[currentPhase] = filteredPhase
-        console.log(filteredPhase)
-        closeWarningModal()
-        handleCloseBtnClick()
+        let filteredPhase = data.currentProject[currentPhase].filter(
+            (el) =>
+                el.taskCreationDate !== taskVisualizationData.taskCreationDate
+        );
+        data.currentProject[currentPhase] = filteredPhase;
+        console.log('eliminamos el elemento');
+        closeWarningModal();
+        handleCloseBtnClick();
     };
 
     return (
