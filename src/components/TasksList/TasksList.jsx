@@ -10,7 +10,7 @@ const TasksList = ({phaseName}) => {
     const {data, setData} = useContext(DataContext);
     const activeTaskVisualization = (el) => {
         setTaskVisualizationActive(true);
-        console.log(data.currentProject[phaseName]);
+        console.log(el);
         setTaskVisualizationData({
             taskTitle: el.taskTitle,
             taskDetails: el.taskDetails,
@@ -22,6 +22,9 @@ const TasksList = ({phaseName}) => {
     const closeTaskVisualization = () => {
         setTaskVisualizationActive(false)
     }
+    useEffect(() => {
+        console.log('se actualizó data')
+    }, [{data}])
     
     return (
         <ul className="task-list">
