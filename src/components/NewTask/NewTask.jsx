@@ -25,12 +25,13 @@ const NewTask = ({closeNewTaskMenu}) => {
     };
     const addTask = (e) => {
         e.preventDefault();
-        let creationDate = Date.now().toString();
+        let creationDate = Date.now();
         let temp = newTaskData;
         temp.taskCreationDate = creationDate;
         data.currentProject.phase1Tasks.push(temp);
         setNewTaskData(newTaskFormat);
         closeNewTaskMenu();
+        console.log(data.currentProject)
     };
     return (
         <div className="new-task-modal">

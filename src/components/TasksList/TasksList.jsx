@@ -3,27 +3,29 @@ import {useContext, useEffect, useState} from "react";
 import {DataContext} from "../../contexts/DataContext";
 import TaskVisualization from "../TaskVisualization/TaskVisualization";
 
-const TasksList = () => {
+const TasksList = ({phaseName}) => {
     const [taskVisualizationActive, setTaskVisualizationActive] =
         useState(false);
     const [taskVisualizationData, setTaskVisualizationData] = useState({});
     const {data, setData} = useContext(DataContext);
     const activeTaskVisualization = (el) => {
         setTaskVisualizationActive(true);
-        console.log(el);
+        console.log(data.currentProject[phaseName]);
         setTaskVisualizationData({
             taskTitle: el.taskTitle,
             taskDetails: el.taskDetails,
             taskExpDate: el.taskExpDate,
-            taskCreationDate: el.taskCreationDate
+            taskCreationDate: el.taskCreationDate,
+            taskPhase: el.taskPhase,
         });
     };
     const closeTaskVisualization = () => {
         setTaskVisualizationActive(false)
     }
+    
     return (
         <ul className="task-list">
-            {data.currentProject.phase1Tasks?.map((el) => (
+            {data.currentProject[phaseName]?.map((el) => (
                 <li
                     key={el.taskCreationDate}
                     className="task-list__card"
