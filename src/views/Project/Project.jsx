@@ -18,9 +18,6 @@ const Project = () => {
         console.log(data)
     }
 
-    useEffect(() => {
-        console.log('data updated en project')
-    }, [{data}])
 
     return (
         <div className="project">

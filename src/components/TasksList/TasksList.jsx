@@ -22,10 +22,6 @@ const TasksList = ({phaseName}) => {
         setTaskVisualizationActive(false);
     };
 
-    useEffect(() => {
-        console.log('data updated en list')
-    }, [{data}])
-
     return (
         <ul className="task-list">
             {data.currentProject[phaseName]?.map((el) => (

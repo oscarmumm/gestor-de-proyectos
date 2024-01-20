@@ -36,6 +36,7 @@ const NewTask = ({closeNewTaskMenu}) => {
         <div className="new-task-modal">
             <div className="new-task">
                 <div className="new-task__close-btn-container">
+                    <h3 className="new-task__close-btn-container__title">Nueva tarea</h3>
                     <button
                         onClick={handleCloseBtnClick}
                         className="btn new-task__close-btn">

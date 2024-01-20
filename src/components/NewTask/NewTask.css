@@ -48,7 +48,11 @@
 .new-task__close-btn-container {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+.new-task__close-btn-container {
+    padding: 1rem;
 }
 
 .new-task__close-btn {

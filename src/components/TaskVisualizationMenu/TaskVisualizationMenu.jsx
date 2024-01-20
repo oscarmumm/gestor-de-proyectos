@@ -22,52 +22,78 @@ const TaskVisualizationMenu = ({
     };
 
     const clickMoveToPhase1 = () => {
+        //asignamos al objeto el valor de la fase a la que vamos a pasarlo en su key taskPhase
         taskVisualizationData.taskPhase = "phase1";
-        //agregamos la tarea a la phase 1
-        data.currentProject.phase1Tasks.push(taskVisualizationData);
-        //eliminamos la tarea de la phase actual
-        let currentPhaseTaskList = `${currentPhase}Tasks`;
-        let filteredPhase = data.currentProject[currentPhaseTaskList].filter(
+        //determinamos la fase actual en la que nos encontramos
+        const currentPhaseTaskList = `${currentPhase}Tasks`;
+        //creamos un array filtrando la tarea para eliminarla del mismo
+        let tempArr = data.currentProject[currentPhaseTaskList].filter(
             (el) =>
                 el.taskCreationDate !== taskVisualizationData.taskCreationDate
         );
-        data.currentProject[currentPhaseTaskList] = filteredPhase;
+        data.currentProject[currentPhaseTaskList] = tempArr;
+        //creamos una copia del objeto currentProject con los datos que hemos modificado
+        const updatedCurrentProject = {
+            //destructuramos el objeto data
+            ...data.currentProject,
+            //agregamos la tarea a la phase 2
+            phase1Tasks: [
+                ...data.currentProject.phase1Tasks,
+                taskVisualizationData,
+            ],
+        };
+        setData({
+            ...data,
+            currentProject: updatedCurrentProject,
+        });
         openMenu();
         handleCloseBtnClick();
-        console.log("moviste a la phase 1");
     };
 
     const clickMoveToPhase2 = () => {
         taskVisualizationData.taskPhase = "phase2";
-        //agregamos la tarea a la phase 2
-        data.currentProject.phase2Tasks.push(taskVisualizationData);
-        //eliminamos la tarea de la phase 1
-        let currentPhaseTaskList = `${currentPhase}Tasks`;
-        let filteredPhase = data.currentProject[currentPhaseTaskList].filter(
+        const currentPhaseTaskList = `${currentPhase}Tasks`;
+        let tempArr = data.currentProject[currentPhaseTaskList].filter(
             (el) =>
                 el.taskCreationDate !== taskVisualizationData.taskCreationDate
         );
-        data.currentProject[currentPhaseTaskList] = filteredPhase;
+        data.currentProject[currentPhaseTaskList] = tempArr;
+        const updatedCurrentProject = {
+            ...data.currentProject,
+            phase2Tasks: [
+                ...data.currentProject.phase2Tasks,
+                taskVisualizationData,
+            ],
+        };
+        setData({
+            ...data,
+            currentProject: updatedCurrentProject,
+        });
         openMenu();
         handleCloseBtnClick();
-        console.log("moviste a la phase 2");
     };
 
     const clickMoveToPhase3 = () => {
         taskVisualizationData.taskPhase = "phase3";
-        //agregamos la tarea a la phase 3
-        data.currentProject.phase3Tasks.push(taskVisualizationData);
-        //eliminamos la tarea de la phase 1
-        let currentPhaseTaskList = `${currentPhase}Tasks`;
-        let filteredPhase = data.currentProject[currentPhaseTaskList].filter(
+        const currentPhaseTaskList = `${currentPhase}Tasks`;
+        let tempArr = data.currentProject[currentPhaseTaskList].filter(
             (el) =>
                 el.taskCreationDate !== taskVisualizationData.taskCreationDate
         );
-        data.currentProject[currentPhaseTaskList] = filteredPhase;
+        data.currentProject[currentPhaseTaskList] = tempArr;
+        const updatedCurrentProject = {
+            ...data.currentProject,
+            phase3Tasks: [
+                ...data.currentProject.phase3Tasks,
+                taskVisualizationData,
+            ],
+        };
+        setData({
+            ...data,
+            currentProject: updatedCurrentProject,
+        });
         openMenu();
         handleCloseBtnClick();
-        console.log("moviste a la phase 3");
-
     };
 
     return (
