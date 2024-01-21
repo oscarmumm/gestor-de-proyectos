@@ -8,6 +8,15 @@
     --red: #fe3b77;
     --green: #3ede9c;
     --white: #ffffff;
+    /* COLORS FOR TASKS */
+    --task-color-1: #E6261F;
+    --task-color-2: #EB7532;
+    --task-color-3: #F7D038;
+    --task-color-4: #A3E048;
+    --task-color-5: #49DA9A;
+    --task-color-6: #34BBE6;
+    --task-color-7: #4355DB;
+    --task-color-8: #D23BE7;
 }
 
 * {
