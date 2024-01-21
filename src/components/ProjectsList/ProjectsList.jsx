@@ -1,14 +1,15 @@
-import { useContext } from "react";
-import { DataContext } from "../../contexts/DataContext";
 import './ProjectsList.css'
-import ProjectPreview from "../ProjectPreview/ProjectPreview";
+import { useContext } from 'react';
+import { DataContext } from '../../contexts/DataContext';
 
 const ProjectsList = () => {
     const {data, setData} = useContext(DataContext)
-    return <ul className="projects-list-container">
+    return <ul>
         {
             data.projects.map((el) => (
-                <ProjectPreview project={el} />
+                <li>
+                    <p>{el.projectName}</p>
+                </li>
             ))
         }
     </ul>;

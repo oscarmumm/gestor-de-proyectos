@@ -11,6 +11,13 @@
     text-align: center;
     padding: 1rem;
     background: var(--dark-02);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-header__back-btn__img {
+    width: 30px;
 }
 
 .project-board {

@@ -3,10 +3,13 @@ import {DataContext} from "../../contexts/DataContext";
 import "./Project.css";
 import NewTask from "../../components/NewTask/NewTask";
 import TasksList from "../../components/TasksList/TasksList";
+import back_icon from "../../assets/icons/back-svgrepo-com.svg";
+import { useNavigate } from "react-router-dom";
 
 const Project = () => {
     const {data, setData} = useContext(DataContext);
     const [newTaskActive, setNewTaskActive] = useState(false);
+    const navigate = useNavigate()
     const newTaskClick = () => {
         setNewTaskActive(true);
     };
@@ -15,15 +18,32 @@ const Project = () => {
     };
 
     const checkData = () => {
-        console.log(data)
-    }
+        console.log(data);
+    };
 
+    const goBack = () => {
+        navigate('/')
+    }
 
     return (
         <div className="project">
             <div className="project-header">
-                <h2>Proyecto: {data.currentProject.projectName}</h2>
-                <button onClick={checkData} className="btn check-data-btn">Check data</button>
+                <div className="project-header__left-container">
+                    <button className="btn project-header__back-btn" onClick={goBack}>
+                        <img
+                            className="project-header__back-btn__img"
+                            src={back_icon}
+                            alt=""
+                        />
+                    </button>
+                </div>
+                <div className="project-header__central-container">
+                    <h2>Proyecto: {data.currentProject.projectName}</h2>
+                    <button onClick={checkData} className="btn check-data-btn">
+                        Check data
+                    </button>
+                </div>
+                <div className="project-header__right-container"></div>
             </div>
             <div className="project-board">
                 <div className="project-board-column">

@@ -10,6 +10,7 @@ const dataFormat = {
     projects: [
         {
             projectName: "Proyecto de ejemplo",
+            projectId: 12,
             phase1: "Etapa 1",
             phase1Tasks: [
                 {

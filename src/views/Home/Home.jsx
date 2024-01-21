@@ -1,6 +1,7 @@
 import {useState} from "react";
 import MainHeader from "../../components/MainHeader/MainHeader";
 import ProjectCreationOptions from "../../components/ProjectCreationOptions/ProjectCreationOptions";
+import RecentProjects from "../../components/RecentProjects/RecentProjects";
 import ProjectsList from "../../components/ProjectsList/ProjectsList";
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
                 openCreationOptionsMenu={openCreationOptionsMenu}
                 
             />
+            <RecentProjects />
             <ProjectsList />
             {projectCreation ? <ProjectCreationOptions closeCreationOptionsMenu={closeCreationOptionsMenu} /> : null}
         </div>

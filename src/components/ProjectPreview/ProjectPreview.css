@@ -20,3 +20,13 @@
     border-top: 2px solid var(--dark-01);
     border-bottom: 2px solid var(--dark-01);
 }
+
+.project-preview-card__phase1-preview__task-title,
+.project-preview-card__phase2-preview__task-title {
+    padding: .5rem 0 0 .5rem;
+}
+
+.project-preview-card__phase1-preview__task-expdate,
+.project-preview-card__phase2-preview__task-expdate {
+    padding: 0 0 0 .5rem;
+}
