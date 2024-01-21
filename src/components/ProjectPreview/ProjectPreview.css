@@ -1,0 +1,22 @@
+.project-preview-card {
+    background: var(--dark-02);
+    width: 500px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.project-preview-card__project-name {
+    text-align: center;
+    padding: 1rem;
+}
+
+.project-preview-card__phase1-preview,
+.project-preview-card__phase2-preview {
+    padding: 1rem;
+    
+}
+
+.project-preview-card__phase1-preview {
+    border-top: 2px solid var(--dark-01);
+    border-bottom: 2px solid var(--dark-01);
+}

@@ -7,7 +7,25 @@ import {useState} from "react";
 
 const dataFormat = {
     currentProject: {},
-    projects: [],
+    projects: [
+        {
+            projectName: "Proyecto de ejemplo",
+            phase1: "Etapa 1",
+            phase1Tasks: [
+                {
+                    taskTitle: "Tarea de ejemplo",
+                    taskDetails: "Esta es una tarea de ejemplo creada para mostrar como se vería un proyecto dentro de la pantalla principal",
+                    taskExpDate: "2024-12-06",
+                    taskCreationDate: 1705852245526,
+                    taskPhase: "phase1",
+                },
+            ],
+            phase2: "Etapa 2",
+            phase2Tasks: [],
+            phase3: "Etapa 3",
+            phase3Tasks: [],
+        },
+    ],
 };
 
 function App() {
