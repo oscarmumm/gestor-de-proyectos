@@ -1,8 +1,9 @@
-import {useState} from "react";
+import { useState } from "react";
 import "./ProjectCreationOptions.css";
-import {useContext} from "react";
-import {DataContext} from "../../contexts/DataContext";
-import {useNavigate} from "react-router-dom";
+import { useContext } from "react";
+import { DataContext } from "../../contexts/DataContext";
+import { useNavigate } from "react-router-dom";
+import EmptyInputWarningModal from "../EmptyInputWarningModal/EmptyInputWarningModal";
 
 const newProjectDataFormat = {
     projectName: "",
@@ -14,14 +15,24 @@ const newProjectDataFormat = {
     phase3Tasks: [],
 };
 
-const ProjectCreationOptions = ({closeCreationOptionsMenu}) => {
-    const {data, setData} = useContext(DataContext);
+const ProjectCreationOptions = ({ closeCreationOptionsMenu }) => {
+    const { data, setData } = useContext(DataContext);
+    const [warningActive, setWarningActive] = useState(false);
     const navigate = useNavigate();
     const [newProjectData, setNewProjectData] = useState(newProjectDataFormat);
     const handleClick = (e) => {
         e.preventDefault();
-        data.currentProject = newProjectData;
-        navigate("/project");
+        if (
+            newProjectData.projectName.trim() === "" ||
+            newProjectData.phase1.trim() === "" ||
+            newProjectData.phase2.trim() === "" ||
+            newProjectData.phase3.trim() === ""
+        ) {
+            setWarningActive(true);
+        } else {
+            data.currentProject = newProjectData;
+            navigate("/project");
+        }
     };
 
     const handleCloseBtnClick = () => {
@@ -35,14 +46,21 @@ const ProjectCreationOptions = ({closeCreationOptionsMenu}) => {
         });
     };
 
+    const toggleWarningModal = () => {
+        warningActive ? setWarningActive(false) : setWarningActive(true);
+    };
+
     return (
         <div className="project-creation-options__screen">
             <div className="project-creation-options">
                 <div className="project-creation-options__close-btn-container">
-                    <h3 className="project-creation-options__close-btn-container__title">Nuevo proyecto</h3>
+                    <h3 className="project-creation-options__close-btn-container__title">
+                        Nuevo proyecto
+                    </h3>
                     <button
                         onClick={handleCloseBtnClick}
-                        className="btn project-creation-options__close-btn">
+                        className="btn project-creation-options__close-btn"
+                    >
                         ╳
                     </button>
                 </div>
@@ -80,11 +98,17 @@ const ProjectCreationOptions = ({closeCreationOptionsMenu}) => {
                     />
                     <button
                         className="btn project-creation-options__create-btn"
-                        onClick={handleClick}>
+                        onClick={handleClick}
+                    >
                         Crear Proyecto
                     </button>
                 </form>
             </div>
+            {warningActive ? (
+                <EmptyInputWarningModal
+                    toggleWarningModal={toggleWarningModal}
+                />
+            ) : null}
         </div>
     );
 };
