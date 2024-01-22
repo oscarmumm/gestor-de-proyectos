@@ -14,8 +14,7 @@
 .task-visualization {
     background: var(--dark-02);
     border-radius: 5px;
-    min-width: 500px;
-    max-width: 600px;
+    width: 600px;
     position: relative;
 }
 
