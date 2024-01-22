@@ -1,0 +1,50 @@
+.color-selector-input {
+    border-radius: 5px;
+    height: 33.3px;
+    width: 100%;
+    background: #fff;
+    position: relative;
+}
+
+.color-selector-panel {
+    border-radius: 5px;
+    padding: .2rem;
+    background: var(--dark-01);
+    position: absolute;
+    left: 150px;
+    top: -25px;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(2, 40px);
+}
+
+.color-selector-color {
+    margin: .2rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.task-color-1 {
+    background: var(--task-color-1);
+}
+.task-color-2 {
+    background: var(--task-color-2);
+}
+.task-color-3 {
+    background: var(--task-color-3);
+}
+.task-color-4 {
+    background: var(--task-color-4);
+}
+.task-color-5 {
+    background: var(--task-color-5);
+}
+.task-color-6 {
+    background: var(--task-color-6);
+}
+.task-color-7 {
+    background: var(--task-color-7);
+}
+.task-color-8 {
+    background: var(--task-color-8);
+}

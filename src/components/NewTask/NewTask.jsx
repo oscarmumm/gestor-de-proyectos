@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import "./NewTask.css";
+import ColorSelector from "../ColorSelector/ColorSelector";
 
 const newTaskFormat = {
     taskTitle: "",
@@ -58,26 +59,31 @@ const NewTask = ({ closeNewTaskMenu }) => {
                     </button>
                 </div>
                 <form className="new-task-form">
+                    <label htmlFor="">Título de la tarea</label>
                     <input
                         className="new-task__title"
                         type="text"
-                        placeholder="Título de la tarea"
                         onChange={handleChange}
                         name="taskTitle"
                     />
+                    <label htmlFor="">Detalles de la tarea</label>
                     <textarea
                         className="new-task__details"
                         type="text"
-                        placeholder="Detalles de la tarea"
                         onChange={handleChange}
                         name="taskDetails"
                     />
-                    <input
-                        className="new-task__expiration"
-                        type="date"
-                        onChange={handleChange}
-                        name="taskExpDate"
-                    />
+                    <div className="new-task__doble-input-line">
+                        <label htmlFor="" className="new-task__expdate-label">Fecha límite</label>
+                        <label htmlFor="" className="new-task__color-label">Color asignado</label>
+                        <input
+                            className="new-task__expiration"
+                            type="date"
+                            onChange={handleChange}
+                            name="taskExpDate"
+                        />
+                        <ColorSelector />
+                    </div>
                     <button
                         className="btn new-task__add-task-btn"
                         onClick={addTask}

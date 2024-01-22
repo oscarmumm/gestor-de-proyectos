@@ -61,3 +61,20 @@
     color: var(--white);
     font-weight: bold;
 }
+
+.new-task__doble-input-line {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    place-items: center;
+    grid-column-gap: 1.5rem;
+}
+
+.new-task__expiration {
+    width: 100%;
+}
+
+.new-task__expdate-label,
+.new-task__color-label {
+    place-self: start;
+}
