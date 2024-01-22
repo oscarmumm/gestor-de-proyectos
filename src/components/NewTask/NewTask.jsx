@@ -35,9 +35,7 @@ const NewTask = ({closeNewTaskMenu}) => {
     };
 
     const saveProject = () => {
-        console.log('debo guardar el objeto del proyecto dentro del array projects')
-        //creo que debo utilizar el id del proyecto para guardarlo
-        //posiblemente deba utilizar el arr.filter para reemplazar el elemento
+        console.log(data)
     };
 
     return (
