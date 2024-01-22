@@ -1,0 +1,11 @@
+.projects-list__project-card {
+    background: var(--dark-02);
+    padding: 1rem;
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

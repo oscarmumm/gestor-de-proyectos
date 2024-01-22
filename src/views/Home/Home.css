@@ -1,0 +1,25 @@
+.home__body-container {
+    display: flex;
+    width: 100%;
+}
+
+.home__recent-projects-section {
+    padding: 1rem;
+}
+
+.home__recent-projects-section__title{
+    margin-bottom: 1rem;
+}
+
+.home__all-projects-section {
+    padding: 1rem;
+}
+
+.home__all-projects-section__title {
+    margin-top: 1rem;
+}
+
+.home__all-projects-section__projects-list {
+    margin-top: 1rem;
+    display: flex;
+}

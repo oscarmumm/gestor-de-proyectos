@@ -8,7 +8,7 @@ const newTaskFormat = {
     taskDetails: "",
     taskExpDate: "",
     taskCreationDate: "",
-    taskPhase: 'phase1',
+    taskPhase: "phase1",
 };
 
 const NewTask = ({closeNewTaskMenu}) => {
@@ -31,12 +31,22 @@ const NewTask = ({closeNewTaskMenu}) => {
         data.currentProject.phase1Tasks.push(temp);
         setNewTaskData(newTaskFormat);
         closeNewTaskMenu();
+        saveProject()
     };
+
+    const saveProject = () => {
+        console.log('debo guardar el objeto del proyecto dentro del array projects')
+        //creo que debo utilizar el id del proyecto para guardarlo
+        //posiblemente deba utilizar el arr.filter para reemplazar el elemento
+    };
+
     return (
         <div className="new-task-modal">
             <div className="new-task">
                 <div className="new-task__close-btn-container">
-                    <h3 className="new-task__close-btn-container__title">Nueva tarea</h3>
+                    <h3 className="new-task__close-btn-container__title">
+                        Nueva tarea
+                    </h3>
                     <button
                         onClick={handleCloseBtnClick}
                         className="btn new-task__close-btn">
