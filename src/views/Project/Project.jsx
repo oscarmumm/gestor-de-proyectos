@@ -1,5 +1,5 @@
-import {useContext, useEffect, useState} from "react";
-import {DataContext} from "../../contexts/DataContext";
+import { useContext, useEffect, useState } from "react";
+import { DataContext } from "../../contexts/DataContext";
 import "./Project.css";
 import NewTask from "../../components/NewTask/NewTask";
 import TasksList from "../../components/TasksList/TasksList";
@@ -7,9 +7,9 @@ import back_icon from "../../assets/icons/back-svgrepo-com.svg";
 import { useNavigate } from "react-router-dom";
 
 const Project = () => {
-    const {data, setData} = useContext(DataContext);
+    const { data, setData } = useContext(DataContext);
     const [newTaskActive, setNewTaskActive] = useState(false);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const newTaskClick = () => {
         setNewTaskActive(true);
     };
@@ -22,14 +22,21 @@ const Project = () => {
     };
 
     const goBack = () => {
-        navigate('/')
-    }
+        setData({
+            ...data,
+            currentProject: {},
+        });
+        navigate("/");
+    };
 
     return (
         <div className="project">
             <div className="project-header">
                 <div className="project-header__left-container">
-                    <button className="btn project-header__back-btn" onClick={goBack}>
+                    <button
+                        className="btn project-header__back-btn"
+                        onClick={goBack}
+                    >
                         <img
                             className="project-header__back-btn__img"
                             src={back_icon}
@@ -39,9 +46,11 @@ const Project = () => {
                 </div>
                 <div className="project-header__central-container">
                     <h2>Proyecto: {data.currentProject.projectName}</h2>
-                    <button onClick={checkData} className="btn check-data-btn">
+                    {/* este boton es un helper para chequear el state de data */}
+
+                    {/* <button onClick={checkData} className="btn check-data-btn">
                         Check data
-                    </button>
+                    </button> */}
                 </div>
                 <div className="project-header__right-container"></div>
             </div>
@@ -53,7 +62,8 @@ const Project = () => {
                     <div className="project-board-column__content">
                         <button
                             onClick={newTaskClick}
-                            className="btn project-board-column__new-task-btn">
+                            className="btn project-board-column__new-task-btn"
+                        >
                             Crear tarea
                         </button>
                         <TasksList phaseName={"phase1Tasks"} />

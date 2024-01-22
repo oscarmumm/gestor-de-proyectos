@@ -5,8 +5,11 @@ import RecentProjects from "../../components/RecentProjects/RecentProjects";
 import ProjectsList from "../../components/ProjectsList/ProjectsList";
 import "./Home.css";
 import NewProjectBtn from "../../components/NewProjectBtn/NewProjectBtn";
+import { useContext } from "react";
+import { DataContext } from "../../contexts/DataContext";
 
 const Home = () => {
+    const {data, setData} = useContext(DataContext)
     const [projectCreation, setprojectCreation] = useState(false);
     const openCreationOptionsMenu = () => {
         setprojectCreation(true);
@@ -14,14 +17,19 @@ const Home = () => {
     const closeCreationOptionsMenu = () => {
         setprojectCreation(false);
     };
+    const checkData = () => {
+        console.log(data)
+    }
     return (
         <div className="home">
             <MainHeader />
+            {/* este boton es un helper para chequear el state de data */}
+            {/* <button onClick={checkData}>Chequear data</button> */}
             <div className="home__body-container">
-                <div className="home__recent-projects-section">
+                {/* <div className="home__recent-projects-section">
                     <h3 className="home__recent-projects-section__title">Próximas tareas a vencer</h3>
                     <RecentProjects />
-                </div>
+                </div> */}
                 <div className="home__all-projects-section">
                     <NewProjectBtn
                         openCreationOptionsMenu={openCreationOptionsMenu}

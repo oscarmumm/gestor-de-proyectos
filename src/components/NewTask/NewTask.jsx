@@ -1,6 +1,6 @@
-import {useState} from "react";
-import {useContext} from "react";
-import {DataContext} from "../../contexts/DataContext";
+import { useState } from "react";
+import { useContext } from "react";
+import { DataContext } from "../../contexts/DataContext";
 import "./NewTask.css";
 
 const newTaskFormat = {
@@ -11,8 +11,8 @@ const newTaskFormat = {
     taskPhase: "phase1",
 };
 
-const NewTask = ({closeNewTaskMenu}) => {
-    const {data, setData} = useContext(DataContext);
+const NewTask = ({ closeNewTaskMenu }) => {
+    const { data, setData } = useContext(DataContext);
     const [newTaskData, setNewTaskData] = useState(newTaskFormat);
     const handleCloseBtnClick = () => {
         closeNewTaskMenu();
@@ -31,11 +31,16 @@ const NewTask = ({closeNewTaskMenu}) => {
         data.currentProject.phase1Tasks.push(temp);
         setNewTaskData(newTaskFormat);
         closeNewTaskMenu();
-        saveProject()
+        saveProject();
     };
 
     const saveProject = () => {
-        console.log(data)
+        const currentProject = data.currentProject;
+        let newArr = data.projects.filter(
+            (el) => el.projectId !== currentProject.projectId
+        );
+        data.projects = newArr;
+        data.projects.push(currentProject);
     };
 
     return (
@@ -47,7 +52,8 @@ const NewTask = ({closeNewTaskMenu}) => {
                     </h3>
                     <button
                         onClick={handleCloseBtnClick}
-                        className="btn new-task__close-btn">
+                        className="btn new-task__close-btn"
+                    >
                         ╳
                     </button>
                 </div>
@@ -74,7 +80,8 @@ const NewTask = ({closeNewTaskMenu}) => {
                     />
                     <button
                         className="btn new-task__add-task-btn"
-                        onClick={addTask}>
+                        onClick={addTask}
+                    >
                         Agregar tarea
                     </button>
                 </form>
