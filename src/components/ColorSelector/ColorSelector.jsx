@@ -1,30 +1,71 @@
 import { useState } from "react";
 import "./ColorSelector.css";
 
-const ColorSelector = () => {
+const ColorSelector = ({ setTaskColor }) => {
     const [panelActive, setPanelActive] = useState(false);
+    const [selectedColor, setSelectedColor] = useState("");
     const openPanel = () => {
         setPanelActive(true);
     };
+
     const assignColor = (e) => {
-      e.preventDefault()
-      console.log(e.target)
-    }
+        e.preventDefault();
+        setSelectedColor(e.target.value);
+        setTaskColor(e.target.value);
+        setPanelActive(false);
+    };
+
     return (
-        <div className="color-selector-input" onClick={openPanel}>
+        <>
+            <div
+                className={`color-selector-input ${selectedColor}`}
+                onClick={openPanel}
+            ></div>
             {panelActive ? (
-                <div className="color-selector-panel">
-                    <div className="color-selector-color task-color-1" onClick={assignColor}></div>
-                    <div className="color-selector-color task-color-2" onClick={assignColor}></div>
-                    <div className="color-selector-color task-color-3" onClick={assignColor}></div>
-                    <div className="color-selector-color task-color-4" onClick={assignColor}></div>
-                    <div className="color-selector-color task-color-5" onClick={assignColor}></div>
-                    <div className="color-selector-color task-color-6" onClick={assignColor}></div>
-                    <div className="color-selector-color task-color-7" onClick={assignColor}></div>
-                    <div className="color-selector-color task-color-8" onClick={assignColor}></div>
-                </div>
+                <ul className="color-selector-panel">
+                    <button
+                        className="btn color-selector-color task-color-1"
+                        value="task-color-1"
+                        onClick={assignColor}
+                    ></button>
+                    <button
+                        className="btn color-selector-color task-color-2"
+                        value="task-color-2"
+                        onClick={assignColor}
+                    ></button>
+                    <button
+                        className="btn color-selector-color task-color-3"
+                        value="task-color-3"
+                        onClick={assignColor}
+                    ></button>
+                    <button
+                        className="btn color-selector-color task-color-4"
+                        value="task-color-4"
+                        onClick={assignColor}
+                    ></button>
+                    <button
+                        className="btn color-selector-color task-color-5"
+                        value="task-color-5"
+                        onClick={assignColor}
+                    ></button>
+                    <button
+                        className="btn color-selector-color task-color-6"
+                        value="task-color-6"
+                        onClick={assignColor}
+                    ></button>
+                    <button
+                        className="btn color-selector-color task-color-7"
+                        value="task-color-7"
+                        onClick={assignColor}
+                    ></button>
+                    <button
+                        className="btn color-selector-color task-color-8"
+                        value="task-color-8"
+                        onClick={assignColor}
+                    ></button>
+                </ul>
             ) : null}
-        </div>
+        </>
     );
 };
 

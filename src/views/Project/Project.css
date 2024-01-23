@@ -1,9 +1,11 @@
 .project {
     width: 100vw;
+    min-width: 1000px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: auto;
 }
 
 .project-header {

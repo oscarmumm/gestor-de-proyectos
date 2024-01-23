@@ -8,10 +8,17 @@
     margin-top: 1rem;
     width: 100%;
     list-style: none;
-    padding: 1rem;
     background: var(--dark-02);
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-list__card-data {
+    padding: 1rem;
+    width: 100%;
+    max-width: 30vw;
 }
 
 .task-list__card-title {
@@ -19,9 +26,14 @@
 }
 
 .task-list__card-details {
-    margin: .5rem 0;
+    margin: 1rem 0 1.5rem 0;
 }
 
-.task-list__card-expdate {
+/* .task-list__card-expdate {
     text-align: end;
+} */
+
+.task-list__card-color {
+    min-width: 20px;
+    border-radius: 0 5px 5px 0;
 }

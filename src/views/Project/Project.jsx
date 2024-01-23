@@ -21,7 +21,18 @@ const Project = () => {
         console.log(data);
     };
 
+
+    const saveProject = () => {
+        const currentProject = data.currentProject;
+        let newArr = data.projects.filter(
+            (el) => el.projectId !== currentProject.projectId
+        );
+        data.projects = newArr;
+        data.projects.push(currentProject);
+    };
+
     const goBack = () => {
+        saveProject()
         setData({
             ...data,
             currentProject: {},

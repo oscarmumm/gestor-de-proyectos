@@ -3,4 +3,5 @@
     height: 100vh;
     background: var(--dark-01);
     color: var(--white);
+    position: fixed;
 }

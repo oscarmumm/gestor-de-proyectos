@@ -10,6 +10,7 @@ const newTaskFormat = {
     taskExpDate: "",
     taskCreationDate: "",
     taskPhase: "phase1",
+    taskColor: "",
 };
 
 const NewTask = ({ closeNewTaskMenu }) => {
@@ -24,6 +25,14 @@ const NewTask = ({ closeNewTaskMenu }) => {
             [e.target.name]: e.target.value,
         });
     };
+
+    const setTaskColor = (color) => {
+        setNewTaskData({
+            ...newTaskData,
+            taskColor: color,
+        })
+    }
+
     const addTask = (e) => {
         e.preventDefault();
         let creationDate = Date.now();
@@ -82,7 +91,7 @@ const NewTask = ({ closeNewTaskMenu }) => {
                             onChange={handleChange}
                             name="taskExpDate"
                         />
-                        <ColorSelector />
+                        <ColorSelector setTaskColor={setTaskColor} />
                     </div>
                     <button
                         className="btn new-task__add-task-btn"

@@ -19,6 +19,7 @@ const dataFormat = {
                     taskExpDate: "2024-12-06",
                     taskCreationDate: 1705852245526,
                     taskPhase: "phase1",
+                    taskColor: "task-color-1",
                 },
             ],
             phase2: "Etapa 2",

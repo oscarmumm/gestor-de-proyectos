@@ -10,15 +10,14 @@
     border-radius: 5px;
     padding: .2rem;
     background: var(--dark-01);
-    position: absolute;
-    left: 150px;
-    top: -25px;
     display: grid;
     grid-template-columns: repeat(4, 50px);
     grid-template-rows: repeat(2, 40px);
+    grid-column: 2 / 3;
 }
 
 .color-selector-color {
+    z-index: 5;
     margin: .2rem;
     cursor: pointer;
     border-radius: 5px;

@@ -1,6 +1,6 @@
 import "./TaskVisualizationMenu.css";
-import {useContext, useState} from "react";
-import {DataContext} from "../../contexts/DataContext";
+import { useContext, useState } from "react";
+import { DataContext } from "../../contexts/DataContext";
 import DeleteWarningModal from "../DeleteWarningModal/DeleteWarningModal";
 
 const TaskVisualizationMenu = ({
@@ -8,7 +8,7 @@ const TaskVisualizationMenu = ({
     handleCloseBtnClick,
     openMenu,
 }) => {
-    const {data, setData} = useContext(DataContext);
+    const { data, setData } = useContext(DataContext);
     const [deleteWarningModalActive, setDeleteWarningModalActive] =
         useState(false);
     const [currentPhase, setCurrentPhase] = useState(
@@ -19,6 +19,15 @@ const TaskVisualizationMenu = ({
     };
     const closeWarningModal = () => {
         setDeleteWarningModalActive(false);
+    };
+
+    const saveProject = () => {
+        const currentProject = data.currentProject;
+        let newArr = data.projects.filter(
+            (el) => el.projectId !== currentProject.projectId
+        );
+        data.projects = newArr;
+        data.projects.push(currentProject);
     };
 
     const clickMoveToPhase1 = () => {
@@ -42,6 +51,7 @@ const TaskVisualizationMenu = ({
                 taskVisualizationData,
             ],
         };
+        saveProject();
         setData({
             ...data,
             currentProject: updatedCurrentProject,
@@ -65,6 +75,8 @@ const TaskVisualizationMenu = ({
                 taskVisualizationData,
             ],
         };
+        saveProject();
+
         setData({
             ...data,
             currentProject: updatedCurrentProject,
@@ -88,6 +100,8 @@ const TaskVisualizationMenu = ({
                 taskVisualizationData,
             ],
         };
+        saveProject();
+
         setData({
             ...data,
             currentProject: updatedCurrentProject,
@@ -101,19 +115,22 @@ const TaskVisualizationMenu = ({
             <li className="task-visualization-menu__option">Editar</li>
             <li
                 onClick={clickOnDelete}
-                className="task-visualization-menu__option">
+                className="task-visualization-menu__option"
+            >
                 Eliminar
             </li>
             {currentPhase === "phase1" ? (
                 <>
                     <li
                         onClick={clickMoveToPhase2}
-                        className="task-visualization-menu__option">
+                        className="task-visualization-menu__option"
+                    >
                         Pasar a {data.currentProject.phase2}
                     </li>
                     <li
                         onClick={clickMoveToPhase3}
-                        className="task-visualization-menu__option">
+                        className="task-visualization-menu__option"
+                    >
                         Pasar a {data.currentProject.phase3}
                     </li>
                 </>
@@ -122,12 +139,14 @@ const TaskVisualizationMenu = ({
                 <>
                     <li
                         onClick={clickMoveToPhase1}
-                        className="task-visualization-menu__option">
+                        className="task-visualization-menu__option"
+                    >
                         Pasar a {data.currentProject.phase1}
                     </li>
                     <li
                         onClick={clickMoveToPhase3}
-                        className="task-visualization-menu__option">
+                        className="task-visualization-menu__option"
+                    >
                         Pasar a {data.currentProject.phase3}
                     </li>
                 </>
@@ -136,12 +155,14 @@ const TaskVisualizationMenu = ({
                 <>
                     <li
                         onClick={clickMoveToPhase1}
-                        className="task-visualization-menu__option">
+                        className="task-visualization-menu__option"
+                    >
                         Pasar a {data.currentProject.phase1}
                     </li>
                     <li
                         onClick={clickMoveToPhase2}
-                        className="task-visualization-menu__option">
+                        className="task-visualization-menu__option"
+                    >
                         Pasar a {data.currentProject.phase2}
                     </li>
                 </>
