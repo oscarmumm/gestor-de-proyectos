@@ -16,10 +16,13 @@
 
 .home__all-projects-section {
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .home__all-projects-section__title {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .home__all-projects-section__projects-list {
