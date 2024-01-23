@@ -2,7 +2,7 @@
     border-radius: 5px;
     height: 33.3px;
     width: 100%;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.1);
     position: relative;
 }
 

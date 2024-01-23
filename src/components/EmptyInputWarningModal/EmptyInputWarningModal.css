@@ -26,6 +26,7 @@
 
 .empty-input-warning__btn {
     margin-top: 1rem;
-    background: var(--purple);
-    color: var(--white);
+    font-weight: bold;
+    background: var(--accent);
+    color: var(--dark-01);
 }

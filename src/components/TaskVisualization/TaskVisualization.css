@@ -28,8 +28,13 @@
     border: none;
     width: 37px;
     background: none;
-    color: var(--white);
+    color: var(--light);
     font-weight: bold;
+}
+
+.task-visualization__close-btn:hover,
+.task-visualization__options-btn:hover {
+    background: var(--hover);
 }
 
 .task-visualization__options-btn__img {

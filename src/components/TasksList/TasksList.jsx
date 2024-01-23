@@ -36,7 +36,7 @@ const TasksList = ({ phaseName }) => {
                             {el.taskTitle}
                         </h4>
                         <p className="task-list__card-details">
-                            {`${el.taskDetails.slice(0, 30)}...`}
+                            {`${el.taskDetails.slice(0, 60)}...`}
                             {/* {el.taskDetails} */}
                         </p>
                         <p className="task-list__card-expdate">

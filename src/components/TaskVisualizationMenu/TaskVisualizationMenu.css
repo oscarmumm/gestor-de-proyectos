@@ -11,4 +11,8 @@
     padding: .75rem 1rem;
     list-style: none;
     cursor: pointer;
+    border-radius: 0 0 5px 5px;
+}
+.task-visualization-menu__option:hover {
+    background: var(--hover);
 }

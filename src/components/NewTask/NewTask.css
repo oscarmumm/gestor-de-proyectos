@@ -24,6 +24,10 @@
     min-width: 500px;
 }
 
+.new-task-form input, .new-task-form textarea {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+}
 .new-task__title,
 .new-task__details,
 .new-task__expiration {
@@ -35,6 +39,7 @@
     border-radius: 5px;
     resize: none;
     height: 10rem;
+    border: none;
 }
 
 .new-task__details:focus {
@@ -43,6 +48,10 @@
 
 .new-task__add-task-btn {
     margin: 1rem 0;
+    background: var(--accent);
+    color: var(--dark-01);
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 .new-task__close-btn-container {
@@ -58,7 +67,7 @@
 .new-task__close-btn {
     width: 37px;
     background: none;
-    color: var(--white);
+    color: var(--light);
     font-weight: bold;
 }
 

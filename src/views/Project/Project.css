@@ -19,8 +19,15 @@
 }
 
 .project-header__back-btn__img {
-    width: 30px;
+    width: 20px;
 }
+
+.project-header__back-btn {
+    background: var(--accent);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
 
 .project-board {
     display: grid;
@@ -40,4 +47,8 @@
 
 .project-board-column__new-task-btn {
     width: 100%;
+    background: var(--accent);
+    color: var(--dark-01);
+    font-weight: bold;
+    font-size: 1rem;
 }

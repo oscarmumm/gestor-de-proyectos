@@ -18,7 +18,10 @@
 .task-list__card-data {
     padding: 1rem;
     width: 100%;
-    max-width: 30vw;
+    /* max-width: 30vw; */
+}
+.task-list__card-data:hover {
+    background: var(--hover);
 }
 
 .task-list__card-title {

@@ -10,3 +10,7 @@
     justify-content: center;
     cursor: pointer;
 }
+
+.projects-list__project-card:hover {
+    background: var(--hover);
+}

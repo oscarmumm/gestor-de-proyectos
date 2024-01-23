@@ -33,11 +33,25 @@
     min-width: 300px;
 }
 
+.project-creation-options__form input {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+}
+
+.project-creation-options__form input::placeholder {
+    color: var(--light);
+}
+
 .project-creation-options__close-btn {
     width: 37px;
     background: none;
-    color: var(--white);
+    color: var(--light);
     font-weight: bold;
+    margin-right: 8.5px;
+}
+
+.project-creation-options__close-btn:hover {
+    background: var(--hover);
 }
 
 .project-creation-options__name-input {
@@ -53,4 +67,8 @@
 }
 .project-creation-options__create-btn {
     margin: 2rem 0;
+    background: var(--accent);
+    color: var(--dark-01);
+    font-weight: bold;
+    font-size: 1rem;
 }

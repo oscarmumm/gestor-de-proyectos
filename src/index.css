@@ -1,13 +1,15 @@
 :root {
     /* COLOR PALLETE */
-    --dark-01: #12101e;
-    --dark-02: #202634;
-    --accent: #15d3b9;
+    --dark-01: #24293e;
+    --dark-02: #2F3855;
+    --hover: #3155AA;
+    --accent: #8ebbff;
+    --light: #f4f5fc;
+    --dark-03: #303644;
     --purple: #4f60eb;
     --orange: #ff9574;
     --red: #fe3b77;
     --green: #3ede9c;
-    --white: #ffffff;
     /* COLORS FOR TASKS */
     --task-color-1: #E6261F;
     --task-color-2: #EB7532;

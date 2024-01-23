@@ -25,13 +25,13 @@
 
 .delete-warning__btn-delete {
     background: var(--red);
-    color: var(--white);
+    color: var(--light);
     min-width: 70px;
 }
 
 .delete-warning__btn-goback {
     background: var(--purple);
-    color: var(--white);
+    color: var(--light);
     min-width: 70px;
 }
 
