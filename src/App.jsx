@@ -46,7 +46,7 @@ function App() {
             <main className="app-container">
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/project" element={<Project />} />
+                    <Route path="/current-project" element={<Project />} />
                 </Routes>
             </main>
         </DataContext.Provider>

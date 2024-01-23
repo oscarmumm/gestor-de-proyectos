@@ -38,7 +38,7 @@ const ProjectCreationOptions = ({ closeCreationOptionsMenu }) => {
             newProjectData.phase3Tasks = [];
             data.currentProject = newProjectData;
             console.log("newProjectData", newProjectData);
-            navigate("/project");
+            navigate("/current-project");
         }
     };
 

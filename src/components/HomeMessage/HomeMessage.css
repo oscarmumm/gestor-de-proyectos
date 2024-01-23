@@ -1,0 +1,8 @@
+.home-message {
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 500px;
+    text-align: center;
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+}

@@ -17,3 +17,7 @@
 .main-header__title {
     max-width: 160px;
 }
+
+.main-header__logo {
+    width: 50px;
+}

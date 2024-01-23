@@ -7,6 +7,7 @@ import "./Home.css";
 import NewProjectBtn from "../../components/NewProjectBtn/NewProjectBtn";
 import { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
+import HomeMessage from "../../components/HomeMessage/HomeMessage";
 
 const Home = () => {
     const {data, setData} = useContext(DataContext)
@@ -26,6 +27,7 @@ const Home = () => {
             {/* este boton es un helper para chequear el state de data */}
             {/* <button onClick={checkData}>Chequear data</button> */}
             <div className="home__body-container">
+            <HomeMessage />
                 {/* <div className="home__recent-projects-section">
                     <h3 className="home__recent-projects-section__title">Próximas tareas a vencer</h3>
                     <RecentProjects />

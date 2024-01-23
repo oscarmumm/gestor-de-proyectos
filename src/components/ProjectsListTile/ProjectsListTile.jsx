@@ -13,10 +13,12 @@ const ProjectsListTile = ({project}) => {
             ...data,
             currentProject: project,
         });
-        navigate("/project");
+        navigate("/current-project");
     };
     return (
-        <div className="projects-list__project-card" onClick={openProject}>{project.projectName}</div>
+        <div className="projects-list__project-card" onClick={openProject}>
+            {project.projectName}
+        </div>
     );
 };
 
