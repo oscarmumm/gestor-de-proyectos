@@ -8,9 +8,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+    position: relative;
 }
 
-.projects-list__project-card:hover {
+/* .projects-list__project-card:hover {
     background: var(--hover);
+} */
+
+.projects-list__project-card__options-btn {
+    border: none;
+    width: 37px;
+    background: none;
+    color: var(--light);
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.projects-list__project-card__options-btn:hover {
+    background: var(--hover);
+}
+
+.projects-list__project-card__options-btn__img {
+    width: 20px;
 }

@@ -65,9 +65,6 @@ const Project = () => {
                     </button> */}
                 </div>
                 <div className="project-header__right-container">
-                    <button className="btn project-header__delete-btn">
-                        <img className="project-header__delete-btn__img" src={delete_icon} alt="" />
-                    </button>
                 </div>
             </div>
             <div className="project-board">

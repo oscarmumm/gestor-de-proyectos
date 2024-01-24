@@ -1,0 +1,21 @@
+.project-options {
+    background: var(--hover);
+    width: 80%;
+    border-radius: 5px;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-options__option {
+    padding: .7rem 1rem;
+    list-style: none;
+    cursor: pointer;
+    border-radius: 0 0 5px 5px;
+}
+.project-options__option:hover {
+    background: var(--hover);
+}
