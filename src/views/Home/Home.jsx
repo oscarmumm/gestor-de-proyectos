@@ -36,7 +36,12 @@ const Home = () => {
                     <NewProjectBtn
                         openCreationOptionsMenu={openCreationOptionsMenu}
                     />
-                    <h3 className="home__all-projects-section__title">Tus proyectos:</h3>
+                    {
+                        data.projects.length > 0 ?
+                        <h3 className="home__all-projects-section__title">Tus proyectos:</h3>
+                        :
+                        <h3 className="home__all-projects-section__title">No tienes proyectos guardados</h3>
+                    }
                     <div className="home__all-projects-section__projects-list">
                         <ProjectsList />
                     </div>

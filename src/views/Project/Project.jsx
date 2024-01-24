@@ -4,12 +4,14 @@ import "./Project.css";
 import NewTask from "../../components/NewTask/NewTask";
 import TasksList from "../../components/TasksList/TasksList";
 import back_icon from "../../assets/icons/back-svgrepo-com.svg";
-import delete_icon from '../../assets/icons/delete-forever-svgrepo-com.svg'
+import edit_icon from "../../assets/icons/edit-svgrepo-com.svg";
 import { useNavigate } from "react-router-dom";
+import EditProjectMainData from "../../components/EditProjectMainData/EditProjectMainData";
 
 const Project = () => {
     const { data, setData } = useContext(DataContext);
     const [newTaskActive, setNewTaskActive] = useState(false);
+    const [editProjectDataActive, setEditProjectDataActive] = useState(false);
     const navigate = useNavigate();
     const newTaskClick = () => {
         setNewTaskActive(true);
@@ -22,7 +24,6 @@ const Project = () => {
         console.log(data);
     };
 
-
     const saveProject = () => {
         const currentProject = data.currentProject;
         let newArr = data.projects.filter(
@@ -33,7 +34,7 @@ const Project = () => {
     };
 
     const goBack = () => {
-        saveProject()
+        saveProject();
         // setData({
         //     ...data,
         //     currentProject: {},
@@ -41,6 +42,11 @@ const Project = () => {
         navigate("/");
     };
 
+    const toggleEditProjectData = () => {
+        editProjectDataActive
+            ? setEditProjectDataActive(false)
+            : setEditProjectDataActive(true);
+    };
     return (
         <div className="project">
             <div className="project-header">
@@ -65,6 +71,16 @@ const Project = () => {
                     </button> */}
                 </div>
                 <div className="project-header__right-container">
+                    <button
+                        className="btn project-header__edit-btn"
+                        onClick={toggleEditProjectData}
+                    >
+                        <img
+                            className="project-header__edit-btn__img"
+                            src={edit_icon}
+                            alt=""
+                        />
+                    </button>
                 </div>
             </div>
             <div className="project-board">
@@ -101,6 +117,13 @@ const Project = () => {
             </div>
             {newTaskActive ? (
                 <NewTask closeNewTaskMenu={closeNewTaskMenu} />
+            ) : null}
+            {editProjectDataActive ? (
+                <EditProjectMainData
+                    toggleEditProjectData={toggleEditProjectData}
+                    projectData={data.currentProject}
+                    saveProject={saveProject}
+                />
             ) : null}
         </div>
     );

@@ -1,8 +1,8 @@
 import "./DeleteProjectWarning.css";
 
-const DeleteProjectWarning = ({toggleWarningModal, deleteProject}) => {
+const DeleteProjectWarning = ({toggleWarningModal, confirmDeleteProject}) => {
     const clickOnDeleteProject = () => {
-        deleteProject();
+        confirmDeleteProject();
     };
     const clickOnGoBack = () => {
         toggleWarningModal()

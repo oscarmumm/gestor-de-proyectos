@@ -18,11 +18,13 @@
     justify-content: space-between;
 }
 
-.project-header__back-btn__img {
+.project-header__back-btn__img,
+.project-header__edit-btn__img {
     width: 20px;
 }
 
-.project-header__back-btn {
+.project-header__back-btn,
+.project-header__edit-btn {
     background: var(--accent);
     font-weight: bold;
     font-size: 1rem;
@@ -58,6 +60,7 @@
 }
 
 .project-header__back-btn:hover,
+.project-header__edit-btn:hover,
 .project-board-column__new-task-btn:hover {
     background: var(--hover-btn);
 }

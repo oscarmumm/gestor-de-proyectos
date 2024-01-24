@@ -1,11 +1,11 @@
 import "./ProjectOptions.css";
-import {useNavigate} from "react-router-dom";
-import {useContext, useState} from "react";
-import {DataContext} from "../../contexts/DataContext";
+import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { DataContext } from "../../contexts/DataContext";
 import DeleteProjectWarning from "../DeleteProjectWarning/DeleteProjectWarning";
 
-const ProjectOptions = ({toggleOptions, project}) => {
-    const {data, setData} = useContext(DataContext);
+const ProjectOptions = ({ toggleOptions, project }) => {
+    const { data, setData } = useContext(DataContext);
     const [warningModalActive, setWarningModalActive] = useState(false);
     const navigate = useNavigate();
 
@@ -25,6 +25,15 @@ const ProjectOptions = ({toggleOptions, project}) => {
         //eliminar el proyecto
         toggleWarningModal();
     };
+
+    const confirmDeleteProject = () => {
+        let filteredProjects = data.projects.filter((el) => el.projectId !== project.projectId)
+        setData({
+            ...data,
+            projects: filteredProjects,
+        })
+    };
+
     const toggleWarningModal = () => {
         warningModalActive
             ? setWarningModalActive(false)
@@ -39,7 +48,10 @@ const ProjectOptions = ({toggleOptions, project}) => {
                 Eliminar
             </li>
             {warningModalActive ? (
-                <DeleteProjectWarning toggleWarningModal={toggleWarningModal} deleteProject={deleteProject} />
+                <DeleteProjectWarning
+                    toggleWarningModal={toggleWarningModal}
+                    confirmDeleteProject={confirmDeleteProject}
+                />
             ) : null}
         </ul>
     );

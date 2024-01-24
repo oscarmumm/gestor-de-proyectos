@@ -21,18 +21,22 @@
     margin: 1rem 0 2rem 0;
     max-width: 200px;
     text-align: center;
+    color: var(--light);
+}
+
+.delete-warning__btn-delete,
+.delete-warning__btn-goback {
+    color: var(--light);
+    min-width: 70px;
+    font-weight: bold;
 }
 
 .delete-warning__btn-delete {
     background: var(--red);
-    color: var(--light);
-    min-width: 70px;
 }
 
 .delete-warning__btn-goback {
     background: var(--purple);
-    color: var(--light);
-    min-width: 70px;
 }
 
 .delete-warning__btn-container {
