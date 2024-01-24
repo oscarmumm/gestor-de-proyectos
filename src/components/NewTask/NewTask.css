@@ -52,6 +52,8 @@
     color: var(--dark-01);
     font-weight: bold;
     font-size: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .new-task__close-btn-container {
@@ -91,7 +93,7 @@
 @media (max-width: 576px) {
     .new-task {
         width: 100vw;
-        border-radius: 0;
+        border-radius: 0 0 5px 5px;
         position: fixed;
         top: 0;
 

@@ -6,13 +6,13 @@ import { useNavigate } from "react-router-dom";
 import EmptyInputWarningModal from "../EmptyInputWarningModal/EmptyInputWarningModal";
 
 const newProjectDataFormat = {
-    projectName: "",
+    projectName: "Nombre del proyecto",
     projectId: "",
-    phase1: "",
+    phase1: "Etapa 1",
     phase1Tasks: [],
-    phase2: "",
+    phase2: "Etapa 2",
     phase2Tasks: [],
-    phase3: "",
+    phase3: "Etapa 3",
     phase3Tasks: [],
 };
 
@@ -78,6 +78,7 @@ const ProjectCreationOptions = ({ closeCreationOptionsMenu }) => {
                         name="projectName"
                         onChange={handleChange}
                         placeholder="Nombre del proyecto"
+                        value={newProjectData.projectName}
                     />
                     <h4 className="project-creation-options__phases-title">
                         Etapas del proyecto
@@ -88,6 +89,8 @@ const ProjectCreationOptions = ({ closeCreationOptionsMenu }) => {
                         name="phase1"
                         onChange={handleChange}
                         placeholder="Etapa 1"
+                        value={newProjectData.phase1}
+
                     />
                     <input
                         className="project-creation-options__phase-input"
@@ -95,6 +98,8 @@ const ProjectCreationOptions = ({ closeCreationOptionsMenu }) => {
                         name="phase2"
                         onChange={handleChange}
                         placeholder="Etapa 2"
+                        value={newProjectData.phase2}
+
                     />
                     <input
                         className="project-creation-options__phase-input"
@@ -102,6 +107,8 @@ const ProjectCreationOptions = ({ closeCreationOptionsMenu }) => {
                         name="phase3"
                         onChange={handleChange}
                         placeholder="Etapa 3"
+                        value={newProjectData.phase3}
+
                     />
                     <button
                         className="btn project-creation-options__create-btn"

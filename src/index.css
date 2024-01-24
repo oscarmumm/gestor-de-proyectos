@@ -30,6 +30,10 @@
     font-family: "Ubuntu";
 }
 
+html {
+    height: 100vh;
+}
+
 @font-face {
     src: url('./fonts/Ubuntu-Light.ttf');
     font-family: "Ubuntu";
