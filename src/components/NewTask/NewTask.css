@@ -87,3 +87,16 @@
 .new-task__color-label {
     place-self: start;
 }
+
+@media (max-width: 576px) {
+    .new-task {
+        width: 100vw;
+        border-radius: 0;
+        position: fixed;
+        top: 0;
+
+    }
+    .new-task-form {
+        min-width: 0;
+    }
+}
