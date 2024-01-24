@@ -4,4 +4,9 @@
     font-weight: bold;
     font-size: 1rem;
     width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.new-project__btn:hover {
+    background: var(--hover-btn);
 }

@@ -1,13 +1,17 @@
 .project-options {
-    background: var(--hover);
+    background: var(--accent);
+    color: var(--dark-01);
+    font-weight: bold;
     width: 80%;
     border-radius: 5px;
     position: absolute;
-    top: -5px;
-    right: 0;
+    top: -10px;
+    right: -10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75); */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .project-options__option {
@@ -15,7 +19,10 @@
     list-style: none;
     cursor: pointer;
     border-radius: 0 0 5px 5px;
+    width: 100px;
+    text-align: center;
 }
 .project-options__option:hover {
-    background: var(--hover);
+    background: var(--hover-btn);
+    border-radius: 5px;
 }

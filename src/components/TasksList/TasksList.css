@@ -13,6 +13,8 @@
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .task-list__card-data {
