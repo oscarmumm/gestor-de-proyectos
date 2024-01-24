@@ -34,10 +34,10 @@ const Project = () => {
 
     const goBack = () => {
         saveProject()
-        setData({
-            ...data,
-            currentProject: {},
-        });
+        // setData({
+        //     ...data,
+        //     currentProject: {},
+        // });
         navigate("/");
     };
 
