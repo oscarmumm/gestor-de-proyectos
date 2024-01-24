@@ -18,11 +18,13 @@
     justify-content: space-between;
 }
 
-.project-header__back-btn__img {
+.project-header__back-btn__img,
+.project-header__delete-btn__img {
     width: 20px;
 }
 
-.project-header__back-btn {
+.project-header__back-btn,
+.project-header__delete-btn {
     background: var(--accent);
     font-weight: bold;
     font-size: 1rem;

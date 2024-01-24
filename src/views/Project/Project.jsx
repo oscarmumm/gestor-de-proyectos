@@ -4,6 +4,7 @@ import "./Project.css";
 import NewTask from "../../components/NewTask/NewTask";
 import TasksList from "../../components/TasksList/TasksList";
 import back_icon from "../../assets/icons/back-svgrepo-com.svg";
+import delete_icon from '../../assets/icons/delete-forever-svgrepo-com.svg'
 import { useNavigate } from "react-router-dom";
 
 const Project = () => {
@@ -63,7 +64,11 @@ const Project = () => {
                         Check data
                     </button> */}
                 </div>
-                <div className="project-header__right-container"></div>
+                <div className="project-header__right-container">
+                    <button className="btn project-header__delete-btn">
+                        <img className="project-header__delete-btn__img" src={delete_icon} alt="" />
+                    </button>
+                </div>
             </div>
             <div className="project-board">
                 <div className="project-board-column">
