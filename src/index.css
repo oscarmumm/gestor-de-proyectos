@@ -32,6 +32,7 @@
 
 html {
     height: 100vh;
+    background: var(--dark-01);
 }
 
 @font-face {
