@@ -22,6 +22,7 @@
 }
 .task-list__card-data:hover {
     background: var(--hover);
+    border-radius: 5px 0 0 5px;
 }
 
 .task-list__card-title {
