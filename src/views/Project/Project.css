@@ -66,3 +66,20 @@
 .project-board-column__new-task-btn:hover {
     background: var(--hover-btn);
 }
+
+@media (max-width: 576px) {
+    .project-header {
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        max-height: 80px;
+    }
+    .project-header__central-container {
+        font-size: .8rem;
+        max-width: 200px;
+    }
+    .project-board {
+        margin-top: 5rem;
+    }
+}
