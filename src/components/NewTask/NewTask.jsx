@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import "./NewTask.css";
 import ColorSelector from "../ColorSelector/ColorSelector";
+import EmptyInputWarningModal from "../EmptyInputWarningModal/EmptyInputWarningModal";
 
 const newTaskFormat = {
     taskTitle: "",
@@ -16,6 +17,7 @@ const newTaskFormat = {
 const NewTask = ({ closeNewTaskMenu }) => {
     const { data, setData } = useContext(DataContext);
     const [newTaskData, setNewTaskData] = useState(newTaskFormat);
+    const [warningActive, setWarningActive] = useState(false);
     const handleCloseBtnClick = () => {
         closeNewTaskMenu();
     };
@@ -30,18 +32,33 @@ const NewTask = ({ closeNewTaskMenu }) => {
         setNewTaskData({
             ...newTaskData,
             taskColor: color,
-        })
-    }
+        });
+    };
 
     const addTask = (e) => {
         e.preventDefault();
-        let creationDate = Date.now();
-        let temp = newTaskData;
-        temp.taskCreationDate = creationDate;
-        data.currentProject.phase1Tasks.push(temp);
-        setNewTaskData(newTaskFormat);
-        closeNewTaskMenu();
-        saveProject();
+        if (
+            newTaskData.taskTitle.trim() === "" ||
+            newTaskData.taskDetails.trim() === "" ||
+            newTaskData.taskExpDate.trim() === "" ||
+            newTaskData.taskPhase.trim() === "" ||
+            newTaskData.taskColor.trim() === ""
+        ) {
+            setWarningActive(true);
+            console.log(newTaskData)
+        } else {
+            let creationDate = Date.now();
+            let temp = newTaskData;
+            temp.taskCreationDate = creationDate;
+            data.currentProject.phase1Tasks.push(temp);
+            setNewTaskData(newTaskFormat);
+            closeNewTaskMenu();
+            saveProject();
+        }
+    };
+
+    const toggleWarningModal = () => {
+        warningActive ? setWarningActive(false) : setWarningActive(true);
     };
 
     const saveProject = () => {
@@ -83,8 +100,12 @@ const NewTask = ({ closeNewTaskMenu }) => {
                         name="taskDetails"
                     />
                     <div className="new-task__doble-input-line">
-                        <label htmlFor="" className="new-task__expdate-label">Fecha límite</label>
-                        <label htmlFor="" className="new-task__color-label">Color asignado</label>
+                        <label htmlFor="" className="new-task__expdate-label">
+                            Fecha límite
+                        </label>
+                        <label htmlFor="" className="new-task__color-label">
+                            Color asignado
+                        </label>
                         <input
                             className="new-task__expiration"
                             type="date"
@@ -101,6 +122,11 @@ const NewTask = ({ closeNewTaskMenu }) => {
                     </button>
                 </form>
             </div>
+            {warningActive ? (
+                <EmptyInputWarningModal
+                    toggleWarningModal={toggleWarningModal}
+                />
+            ) : null}
         </div>
     );
 };
