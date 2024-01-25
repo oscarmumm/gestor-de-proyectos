@@ -12,10 +12,10 @@ const TaskVisualization = ({
     const [taskMenuActive, setTaskMenuActive] = useState(false);
     const { data, setData } = useContext(DataContext);
     //esta funcion también pasa a los componentes hijos para que al eliminar la tarea se cierren las ventanas modales y vuelva a la vista de proyecto
-    const handleCloseBtnClick = () => {
+    const toggleVisualizationData = () => {
         setTaskVisualizationActive(false);
     };
-    const openMenu = () => {
+    const toggleMenu = () => {
         taskMenuActive ? setTaskMenuActive(false) : setTaskMenuActive(true);
     };
     return (
@@ -23,7 +23,7 @@ const TaskVisualization = ({
             <div className="task-visualization">
                 <div className="task-visualization__header">
                     <button
-                        onClick={openMenu}
+                        onClick={toggleMenu}
                         className="btn task-visualization__options-btn"
                     >
                         <img
@@ -32,20 +32,21 @@ const TaskVisualization = ({
                             alt=""
                         />
                     </button>
-                    {taskMenuActive ? (
-                        <TaskVisualizationMenu
-                            taskVisualizationData={taskVisualizationData}
-                            handleCloseBtnClick={handleCloseBtnClick}
-                            openMenu={openMenu}
-                        />
-                    ) : null}
+                    
                     <button
-                        onClick={handleCloseBtnClick}
+                        onClick={toggleVisualizationData}
                         className="btn task-visualization__close-btn"
                     >
                         ╳
                     </button>
                 </div>
+                {taskMenuActive ? (
+                        <TaskVisualizationMenu
+                            taskVisualizationData={taskVisualizationData}
+                            toggleVisualizationData={toggleVisualizationData}
+                            toggleMenu={toggleMenu}
+                        />
+                    ) : null}
                 <div className="task-visualization__content">
                     <h4 className="task-visualization__title">
                         {taskVisualizationData.taskTitle}

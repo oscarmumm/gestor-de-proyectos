@@ -56,3 +56,12 @@
 .task-visualization__expdate {
     text-align: end;
 }
+
+@media (max-width: 576px) {
+    .task-visualization {
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        border-radius: 0 0 5px 5px;
+    }
+}

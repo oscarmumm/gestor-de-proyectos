@@ -5,7 +5,7 @@ import {DataContext} from "../../contexts/DataContext";
 const DeleteWarningModal = ({
     closeWarningModal,
     taskVisualizationData,
-    handleCloseBtnClick,
+    toggleVisualizationData,
 }) => {
     const {data, setData} = useContext(DataContext);
     const clickOnGoBack = () => {
@@ -22,7 +22,7 @@ const DeleteWarningModal = ({
         data.currentProject[currentPhase] = filteredPhase;
         console.log('eliminamos el elemento');
         closeWarningModal();
-        handleCloseBtnClick();
+        toggleVisualizationData();
     };
 
     return (

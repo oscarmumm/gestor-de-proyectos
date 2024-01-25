@@ -36,7 +36,6 @@ const EditProjectMainData = ({toggleEditProjectData, projectData, saveProject}) 
         }
         saveProject()
         toggleEditProjectData();
-        console.log(editedProjectData)
     };
 
     const toggleWarningModal = () => {

@@ -2,11 +2,12 @@ import "./TaskVisualizationMenu.css";
 import { useContext, useState } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import DeleteWarningModal from "../DeleteWarningModal/DeleteWarningModal";
+import EditTask from "../EditTask/EditTask";
 
 const TaskVisualizationMenu = ({
     taskVisualizationData,
-    handleCloseBtnClick,
-    openMenu,
+    toggleVisualizationData,
+    toggleMenu,
 }) => {
     const { data, setData } = useContext(DataContext);
     const [deleteWarningModalActive, setDeleteWarningModalActive] =
@@ -14,6 +15,7 @@ const TaskVisualizationMenu = ({
     const [currentPhase, setCurrentPhase] = useState(
         taskVisualizationData.taskPhase
     );
+    const [editModeActive, setEditModeActive] = useState(false);
     const clickOnDelete = () => {
         setDeleteWarningModalActive(true);
     };
@@ -28,6 +30,10 @@ const TaskVisualizationMenu = ({
         );
         data.projects = newArr;
         data.projects.push(currentProject);
+    };
+
+    const toggleEditTask = () => {
+        editModeActive ? setEditModeActive(false) : setEditModeActive(true);
     };
 
     const clickMoveToPhase1 = () => {
@@ -56,8 +62,8 @@ const TaskVisualizationMenu = ({
             ...data,
             currentProject: updatedCurrentProject,
         });
-        openMenu();
-        handleCloseBtnClick();
+        toggleMenu();
+        toggleVisualizationData();
     };
 
     const clickMoveToPhase2 = () => {
@@ -81,8 +87,8 @@ const TaskVisualizationMenu = ({
             ...data,
             currentProject: updatedCurrentProject,
         });
-        openMenu();
-        handleCloseBtnClick();
+        toggleMenu();
+        toggleVisualizationData();
     };
 
     const clickMoveToPhase3 = () => {
@@ -106,19 +112,19 @@ const TaskVisualizationMenu = ({
             ...data,
             currentProject: updatedCurrentProject,
         });
-        openMenu();
-        handleCloseBtnClick();
+        toggleMenu();
+        toggleVisualizationData();
     };
 
     return (
         <ul className="task-visualization-menu">
-            <li className="task-visualization-menu__option">Editar</li>
             <li
-                onClick={clickOnDelete}
                 className="task-visualization-menu__option"
+                onClick={toggleEditTask}
             >
-                Eliminar
+                Editar
             </li>
+            
             {currentPhase === "phase1" ? (
                 <>
                     <li
@@ -167,11 +173,26 @@ const TaskVisualizationMenu = ({
                     </li>
                 </>
             ) : null}
+            <li
+                onClick={clickOnDelete}
+                className="task-visualization-menu__option"
+            >
+                Eliminar
+            </li>
             {deleteWarningModalActive ? (
                 <DeleteWarningModal
                     taskVisualizationData={taskVisualizationData}
                     closeWarningModal={closeWarningModal}
-                    handleCloseBtnClick={handleCloseBtnClick}
+                    toggleVisualizationData={toggleVisualizationData}
+                />
+            ) : null}
+            {editModeActive ? (
+                <EditTask
+                    taskData={taskVisualizationData}
+                    toggleEditTask={toggleEditTask}
+                    saveProject={saveProject}
+                    toggleMenu={toggleMenu}
+                    toggleVisualizationData={toggleVisualizationData}
                 />
             ) : null}
         </ul>

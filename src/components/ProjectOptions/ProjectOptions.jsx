@@ -10,7 +10,6 @@ const ProjectOptions = ({ toggleOptions, project }) => {
     const navigate = useNavigate();
 
     const openProject = () => {
-        console.log(project);
         setData({
             ...data,
             currentProject: project,

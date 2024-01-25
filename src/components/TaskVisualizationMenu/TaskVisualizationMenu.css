@@ -1,18 +1,36 @@
 .task-visualization-menu {
-    background: var(--dark-02);
+    background: var(--accent);
+    color: var(--dark-01);
+    font-weight: bold;
     border-radius: 5px;
+    width: 90%;
     position: absolute;
-    top: 0;
-    left: 2rem;
-    display: flex;
+    top: -10px;
+    right: -10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .task-visualization-menu__option {
-    padding: .75rem 1rem;
+    padding: .7rem .5rem;
+    text-align: center;
     list-style: none;
     cursor: pointer;
     border-radius: 0 0 5px 5px;
 }
 .task-visualization-menu__option:hover {
     background: var(--hover);
+    border-radius: 5px;
+}
+
+@media (max-width: 576px) {
+    .task-visualization-menu {
+        position: relative;
+        width: 100%;
+        display: grid;
+        align-items: center;
+        top: 10px;
+        right: 0;
+        margin-bottom: 1rem;
+    }
 }

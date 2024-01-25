@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./ColorSelector.css";
 
-const ColorSelector = ({ setTaskColor }) => {
+const ColorSelector = ({ setTaskColor, initialColor }) => {
     const [panelActive, setPanelActive] = useState(false);
-    const [selectedColor, setSelectedColor] = useState("");
+    const [selectedColor, setSelectedColor] = useState(initialColor);
     const openPanel = () => {
         setPanelActive(true);
     };
