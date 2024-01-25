@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import EmptyInputWarningModal from "../EmptyInputWarningModal/EmptyInputWarningModal";
 
 const newProjectDataFormat = {
-    projectName: "Nombre del proyecto",
+    projectName: "",
     projectId: "",
     phase1: "Etapa 1",
     phase1Tasks: [],
@@ -72,16 +72,19 @@ const ProjectCreationOptions = ({ closeCreationOptionsMenu }) => {
                     </button>
                 </div>
                 <form className="project-creation-options__form">
+                    <h4 className="project-creation-options__name-title">
+                        Nombre
+                    </h4>
                     <input
                         className="project-creation-options__name-input"
                         type="text"
                         name="projectName"
                         onChange={handleChange}
-                        placeholder="Nombre del proyecto"
+                        placeholder=""
                         value={newProjectData.projectName}
                     />
                     <h4 className="project-creation-options__phases-title">
-                        Etapas del proyecto
+                        Etapas
                     </h4>
                     <input
                         className="project-creation-options__phase-input"
