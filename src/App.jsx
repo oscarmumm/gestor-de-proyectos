@@ -43,7 +43,12 @@ const dataFormat = {
 function App() {
     const [data, setData] = useState(() => {
         let localData = localStorage.getItem("data");
-        return JSON.parse(localData);
+        if(localData){
+            return JSON.parse(localData);
+
+        } else {
+            return dataFormat
+        }
     });
 
     useEffect(() => {
