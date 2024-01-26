@@ -20,7 +20,7 @@ const DeleteWarningModal = ({
                 el.taskCreationDate !== taskVisualizationData.taskCreationDate
         );
         data.currentProject[currentPhase] = filteredPhase;
-        console.log('eliminamos el elemento');
+        window.localStorage.setItem('data', JSON.stringify(data))
         closeWarningModal();
         toggleVisualizationData();
     };

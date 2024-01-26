@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import "./NewTask.css";
@@ -67,7 +67,13 @@ const NewTask = ({ closeNewTaskMenu }) => {
         );
         data.projects = newArr;
         data.projects.push(currentProject);
+        window.localStorage.setItem('data', JSON.stringify(data))
+        console.log('guardando...')
     };
+
+    useEffect(() => {
+        console.log('data ha sido modificado')
+    }, [{data}])
 
     return (
         <div className="new-task-modal">

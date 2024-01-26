@@ -3,7 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import Home from "./views/Home/Home";
 import Project from "./views/Project/Project";
 import {DataContext} from "./contexts/DataContext";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 const dataFormat = {
     currentProject: {},
@@ -15,7 +15,8 @@ const dataFormat = {
             phase1Tasks: [
                 {
                     taskTitle: "Tarea de ejemplo",
-                    taskDetails: "Esta es una tarea de ejemplo creada para mostrar como se vería un proyecto dentro de la pantalla principal",
+                    taskDetails:
+                        "Esta es una tarea de ejemplo creada para mostrar como se vería un proyecto dentro de la pantalla principal",
                     taskExpDate: "2024-12-06",
                     taskCreationDate: 1705852245526,
                     taskPhase: "phase1",
@@ -23,7 +24,8 @@ const dataFormat = {
                 },
                 {
                     taskTitle: "Otra tarea de ejemplo",
-                    taskDetails: "Esta es otra tarea de ejemplo creada para mostrar como se vería un proyecto dentro de la pantalla principal",
+                    taskDetails:
+                        "Esta es otra tarea de ejemplo creada para mostrar como se vería un proyecto dentro de la pantalla principal",
                     taskExpDate: "2024-12-06",
                     taskCreationDate: 1705852245527,
                     taskPhase: "phase1",
@@ -39,8 +41,18 @@ const dataFormat = {
 };
 
 function App() {
-    const [data, setData] = useState(dataFormat);
+    const [data, setData] = useState(() => {
+        let localData = localStorage.getItem("data");
+        return JSON.parse(localData);
+    });
 
+    useEffect(() => {
+        const localData = window.localStorage.getItem("data");
+        console.log(JSON.parse(localData));
+        setData(JSON.parse(localData));
+    }, []);
+
+    
     return (
         <DataContext.Provider value={{data, setData}}>
             <main className="app-container">

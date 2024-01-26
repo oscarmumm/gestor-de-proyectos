@@ -1,7 +1,6 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import MainHeader from "../../components/MainHeader/MainHeader";
 import ProjectCreationOptions from "../../components/ProjectCreationOptions/ProjectCreationOptions";
-import RecentProjects from "../../components/RecentProjects/RecentProjects";
 import ProjectsList from "../../components/ProjectsList/ProjectsList";
 import "./Home.css";
 import NewProjectBtn from "../../components/NewProjectBtn/NewProjectBtn";
@@ -21,6 +20,11 @@ const Home = () => {
     const checkData = () => {
         console.log(data)
     }
+
+    useEffect(()=> {
+        window.localStorage.setItem('data', JSON.stringify(data))
+    }, [{data}])
+
     return (
         <div className="home">
             <MainHeader />

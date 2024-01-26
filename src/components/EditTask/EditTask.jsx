@@ -1,6 +1,6 @@
 import "./EditTask.css";
-import { useContext, useState } from "react";
-import { DataContext } from "../../contexts/DataContext";
+import {useContext, useState} from "react";
+import {DataContext} from "../../contexts/DataContext";
 import ColorSelector from "../ColorSelector/ColorSelector";
 import EmptyInputWarningModal from "../EmptyInputWarningModal/EmptyInputWarningModal";
 
@@ -20,7 +20,7 @@ const EditTask = ({
     toggleMenu,
     toggleVisualizationData,
 }) => {
-    const { data, setData } = useContext(DataContext);
+    const {data, setData} = useContext(DataContext);
     const [warningActive, setWarningActive] = useState(false);
     const [editedTaskData, setEditedTaskData] = useState(taskData);
     const handleChange = (e) => {
@@ -63,6 +63,8 @@ const EditTask = ({
                     [currentPhase]: updatedPhaseTasks,
                 },
             });
+            window.localStorage.setItem("data", JSON.stringify(data));
+
             toggleEditTask();
             toggleMenu();
             toggleVisualizationData();
@@ -80,8 +82,7 @@ const EditTask = ({
                     </h3>
                     <button
                         onClick={handleCloseBtnClick}
-                        className="btn new-task__close-btn"
-                    >
+                        className="btn new-task__close-btn">
                         ╳
                     </button>
                 </div>
@@ -123,8 +124,7 @@ const EditTask = ({
                     </div>
                     <button
                         className="btn new-task__add-task-btn"
-                        onClick={saveTask}
-                    >
+                        onClick={saveTask}>
                         Guardar
                     </button>
                 </form>

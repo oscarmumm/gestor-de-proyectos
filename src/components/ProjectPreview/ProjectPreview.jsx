@@ -13,6 +13,8 @@ const ProjectPreview = ({project}) => {
             ...data,
             currentProject: project,
         });
+        window.localStorage.setItem('data', JSON.stringify(data))
+
         navigate("/project");
     };
 

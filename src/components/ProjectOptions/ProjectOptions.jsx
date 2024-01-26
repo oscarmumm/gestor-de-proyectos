@@ -14,6 +14,8 @@ const ProjectOptions = ({ toggleOptions, project }) => {
             ...data,
             currentProject: project,
         });
+        window.localStorage.setItem('data', JSON.stringify(data))
+
         navigate("/current-project");
     };
     const editProject = () => {
@@ -31,6 +33,8 @@ const ProjectOptions = ({ toggleOptions, project }) => {
             ...data,
             projects: filteredProjects,
         })
+        window.localStorage.setItem('data', JSON.stringify(data))
+
     };
 
     const toggleWarningModal = () => {

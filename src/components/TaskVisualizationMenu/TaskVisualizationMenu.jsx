@@ -30,6 +30,8 @@ const TaskVisualizationMenu = ({
         );
         data.projects = newArr;
         data.projects.push(currentProject);
+        window.localStorage.setItem('data', JSON.stringify(data))
+
     };
 
     const toggleEditTask = () => {

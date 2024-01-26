@@ -1,15 +1,15 @@
-import { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../contexts/DataContext";
+import {useContext, useEffect, useState} from "react";
+import {DataContext} from "../../contexts/DataContext";
 import "./Project.css";
 import NewTask from "../../components/NewTask/NewTask";
 import TasksList from "../../components/TasksList/TasksList";
 import back_icon from "../../assets/icons/back-svgrepo-com.svg";
 import edit_icon from "../../assets/icons/edit-svgrepo-com.svg";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import EditProjectMainData from "../../components/EditProjectMainData/EditProjectMainData";
 
 const Project = () => {
-    const { data, setData } = useContext(DataContext);
+    const {data, setData} = useContext(DataContext);
     const [newTaskActive, setNewTaskActive] = useState(false);
     const [editProjectDataActive, setEditProjectDataActive] = useState(false);
     const navigate = useNavigate();
@@ -31,6 +31,7 @@ const Project = () => {
         );
         data.projects = newArr;
         data.projects.push(currentProject);
+        window.localStorage.setItem("data", JSON.stringify(data));
     };
 
     const goBack = () => {
@@ -53,8 +54,7 @@ const Project = () => {
                 <div className="project-header__left-container">
                     <button
                         className="btn project-header__back-btn"
-                        onClick={goBack}
-                    >
+                        onClick={goBack}>
                         <img
                             className="project-header__back-btn__img"
                             src={back_icon}
@@ -73,8 +73,7 @@ const Project = () => {
                 <div className="project-header__right-container">
                     <button
                         className="btn project-header__edit-btn"
-                        onClick={toggleEditProjectData}
-                    >
+                        onClick={toggleEditProjectData}>
                         <img
                             className="project-header__edit-btn__img"
                             src={edit_icon}
@@ -91,8 +90,7 @@ const Project = () => {
                     <div className="project-board-column__content">
                         <button
                             onClick={newTaskClick}
-                            className="btn project-board-column__new-task-btn"
-                        >
+                            className="btn project-board-column__new-task-btn">
                             Crear tarea
                         </button>
                         <TasksList phaseName={"phase1Tasks"} />
