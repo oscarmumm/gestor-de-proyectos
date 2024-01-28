@@ -15,6 +15,7 @@
     background: var(--dark-02);
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: .2s ease-in go-up;
 
 }
 

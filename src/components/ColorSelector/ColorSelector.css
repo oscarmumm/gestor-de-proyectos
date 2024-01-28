@@ -14,7 +14,7 @@
     grid-template-columns: repeat(4, 50px);
     grid-template-rows: repeat(2, 40px);
     grid-column: 2 / 3;
-    
+    animation: .25s linear go-up;
 }
 
 .color-selector-color {

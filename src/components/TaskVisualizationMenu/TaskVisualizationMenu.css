@@ -9,6 +9,8 @@
     right: -10px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    animation: .25s linear go-up;
+
 }
 
 .task-visualization-menu__option {

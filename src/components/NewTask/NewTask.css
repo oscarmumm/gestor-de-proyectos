@@ -16,6 +16,8 @@
     background: var(--dark-02);
     border-radius: 5px;
     color: var(--light);
+    animation: .25s linear go-up;
+
 }
 
 .new-task-form {

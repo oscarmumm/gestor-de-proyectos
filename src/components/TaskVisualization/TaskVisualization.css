@@ -16,6 +16,8 @@
     border-radius: 5px;
     width: 600px;
     position: relative;
+    animation: .25s linear go-up;
+
 }
 
 .task-visualization__header {

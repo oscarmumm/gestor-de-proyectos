@@ -12,6 +12,8 @@
     justify-content: center;
     /* box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75); */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: .25s linear go-up;
+
 }
 
 .project-options__option {

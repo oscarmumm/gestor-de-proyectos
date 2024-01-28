@@ -4,13 +4,15 @@
     margin: 1rem;
     width: 250px;
     height: 150px;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-top: 1px solid var(--accent);
 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: .5s ease-in fade-in;
 }
 
 /* .projects-list__project-card:hover {
@@ -26,11 +28,15 @@
     position: absolute;
     top: 0;
     left: 0;
+    border-radius: 10px;
 }
 .projects-list__project-card__options-btn:hover {
-    background: var(--hover);
+    background: var(--accent);
+    border-radius: 10px;
 }
 
 .projects-list__project-card__options-btn__img {
     width: 20px;
 }
+
+
